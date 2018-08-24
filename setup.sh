@@ -72,7 +72,7 @@ link_files() {
 }
 
 initialize() {
-  # ... Initialize処理
+  echo "nothing"
 }
 
 # 引数によって場合分け
