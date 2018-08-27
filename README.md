@@ -6,7 +6,7 @@ My dotfiles here
 
 `sh ~/dotfiles/deploy.sh`
 
-# e.g.
+# c.f.
 
 https://qiita.com/okamos/items/7f5461814e8ed8916870
 
