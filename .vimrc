@@ -3,6 +3,7 @@ call plug#begin()
 	Plug 'jacoborus/tender.vim'
 	Plug 'itchyny/lightline.vim'
 	Plug 'mattn/emmet-vim'
+	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
 call plug#end()
 
 set title "編集中ファイル名の表示
