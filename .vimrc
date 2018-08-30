@@ -79,6 +79,9 @@ nnoremap <C-p> gT
 "履歴を10000件保存
 set history=10000
 
+" 全角スペースの背景を白に変更
+autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
+autocmd VimEnter * match FullWidthSpace /　/
 "カラースキーマの適用
 "colorscheme molokai
 colorscheme tender
