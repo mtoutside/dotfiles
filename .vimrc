@@ -5,6 +5,7 @@ call plug#begin()
 	Plug 'mattn/emmet-vim'
 	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
 	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+	Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 set title "編集中ファイル名の表示
