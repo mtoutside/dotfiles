@@ -100,8 +100,8 @@ alias ls='gls  --color'
 alias rmt='rmtrash'
 alias cp='cp -i'
 alias mv='mv -i'
-
 alias mkdir='mkdir -p'
+alias trello='open https://trello.com/'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
