@@ -32,6 +32,7 @@ set backspace=indent,eol,start "バックスペースでの行移動を可能に
 "let &t_ti.="\e[5 q" "カーソルの形状を変更
 "ヤンクをクリップボードに連携
 set clipboard=unnamed,autoselect
+set wildmenu wildmode=list:full
 "===== 検索設定 =====
 set ignorecase "大文字、小文字の区別をしない
 set smartcase "大文字が含まれている場合は区別する
