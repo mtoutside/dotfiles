@@ -14,6 +14,7 @@ set list "タブ、空白、改行を可視化
 set visualbell "ビープ音を視覚表示
 set laststatus=2 "ステータスを表示
 syntax on
+au BufNewFile,BufRead *.ejs set filetype=html "ejsの時にsyantax=htmlにする
 set nu
 set hidden
 
