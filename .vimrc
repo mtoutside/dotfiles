@@ -6,6 +6,8 @@ call plug#begin()
 	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
 	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'editorconfig/editorconfig-vim'
+	Plug 'nathanaelkane/vim-indent-guides'
+	Plug 'ternjs/tern_for_vim'
 call plug#end()
 
 set title "編集中ファイル名の表示
@@ -24,15 +26,31 @@ set fenc=utf-8 "文字コードを指定
 set virtualedit=onemore "カーソルを行末の一つ先まで移動可能にする
 set autoindent "自動インデント
 set smartindent "オートインデント
+let g:indent_guides_enable_on_vim_startup = 1 "インデント可視化
 set tabstop=2 "インデントをスペース2つ分に設定
 set shiftwidth=2 "自動的に入力されたインデントの空白を2つ分に設定
 "set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮ "不可視文字の指定
 set listchars=tab:▸\ ,eol:$,extends:❯,precedes:❮ "不可視文字の指定
 set whichwrap=b,s,h,l,<,>,[,],~ "行頭、行末で行のカーソル移動を可能にする
 set backspace=indent,eol,start "バックスペースでの行移動を可能にする
+set cursorline " カーソルラインをハイライト
 "let &t_ti.="\e[5 q" "カーソルの形状を変更
 "ヤンクをクリップボードに連携
+"クリップボードからペーストする時だけインデントしない
 set clipboard=unnamed,autoselect
+if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif
+
 set wildmenu wildmode=list:full
 "===== 検索設定 =====
 set ignorecase "大文字、小文字の区別をしない
