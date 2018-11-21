@@ -57,6 +57,7 @@ set ignorecase "大文字、小文字の区別をしない
 set smartcase "大文字が含まれている場合は区別する
 set wrapscan "検索時に最後まで行ったら最初に戻る
 set hlsearch "検索した文字を強調
+nnoremap <F3> :noh<CR> "検索ハイライトをF3で切り替え
 set incsearch "インクリメンタルサーチを有効にする
  
 
