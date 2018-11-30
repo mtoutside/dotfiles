@@ -4,10 +4,10 @@ call plug#begin()
 	Plug 'itchyny/lightline.vim'
 	Plug 'mattn/emmet-vim'
 	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
-	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'ternjs/tern_for_vim'
+	Plug 'othree/yajs.vim'
 call plug#end()
 
 set title "編集中ファイル名の表示
@@ -17,6 +17,7 @@ set visualbell "ビープ音を視覚表示
 set laststatus=2 "ステータスを表示
 syntax on
 au BufNewFile,BufRead *.ejs set filetype=html "ejsの時にsyantax=htmlにする
+let g:deoplete#enable_at_startup = 1
 set nu
 set hidden
 
@@ -59,7 +60,6 @@ set wrapscan "検索時に最後まで行ったら最初に戻る
 set hlsearch "検索した文字を強調
 nnoremap <F3> :noh<CR> "検索ハイライトをF3で切り替え
 set incsearch "インクリメンタルサーチを有効にする
- 
 
 "===== マウス設定 =====
 set mouse=a
