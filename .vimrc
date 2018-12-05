@@ -86,8 +86,8 @@ inoremap <C-a> <C-o>^
 "行末へ移動
 inoremap <C-e> <C-o>$
 "jキーを二度押しでESCキー
-"inoremap <silent> jj <Esc>
-"inoremap <silent> っj <ESC>
+inoremap <silent> jj <Esc>
+inoremap <silent> っj <ESC>
 
 "ノーマルモードでshift+oで空行追加
 "nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
