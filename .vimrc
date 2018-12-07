@@ -66,21 +66,13 @@ set mouse=a
 set ttymouse=xterm2
 
 "===== キー入力 =====
-"方向キーの無効化 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-
 "入力モード時のカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-h> <BS>
+inoremap <C-d> <Del>
 "行頭へ移動
 inoremap <C-a> <C-o>^
 "行末へ移動
@@ -98,6 +90,13 @@ nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 nnoremap <Space>c  :tabnew<CR> 
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+"でレジスタ上書きしない
+nnoremap X "_X
+vnoremap X "_X
+nnoremap s "_s
+vnoremap s "_s
+nnoremap S "_S
+vnoremap S "_S
 "===== その他 =====
 "履歴を10000件保存
 set history=10000
