@@ -8,6 +8,7 @@ call plug#begin()
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'ternjs/tern_for_vim'
 	Plug 'othree/yajs.vim'
+	Plug 'sophacles/vim-processing'
 call plug#end()
 
 set title "編集中ファイル名の表示
