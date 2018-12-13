@@ -86,6 +86,8 @@ inoremap <silent> っj <ESC>
 "nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 "ノーマルモードでspace+enterで空行追加
 nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
+"ノーマルモードでenterで改行追加
+nnoremap <CR> i<Return><Esc>^k
 
 "space+cで新規タブ,<C-n>で次、<C-p>で前のタブ
 nnoremap <Space>c  :tabnew<CR> 
