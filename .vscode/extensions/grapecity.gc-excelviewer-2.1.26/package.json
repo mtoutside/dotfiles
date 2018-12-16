@@ -1,0 +1,335 @@
+{
+	"name": "gc-excelviewer",
+	"displayName": "Excel Viewer",
+	"description": "View Excel spreadsheets and CSV files within Visual Studio Code workspaces.",
+	"version": "2.1.26",
+	"icon": "img/gc-excelviewer.png",
+	"publisher": "GrapeCity",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"galleryBanner": {
+		"color": "#00AADC",
+		"theme": "dark"
+	},
+	"bugs": {
+		"url": "https://github.com/jjuback/gc-excelviewer/issues"
+	},
+	"homepage": "https://github.com/jjuback/gc-excelviewer/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jjuback/gc-excelviewer.git"
+	},
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"CSV",
+		"Excel",
+		"spreadsheet",
+		"viewer",
+		"vscode"
+	],
+	"activationEvents": [
+		"onCommand:csv.preview",
+		"onCommand:excel.preview",
+		"onLanguage:plaintext"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "csv",
+				"extensions": [
+					".csv"
+				],
+				"aliases": [
+					"CSV"
+				]
+			},
+			{
+				"id": "tsv",
+				"extensions": [
+					".tsv",
+					".tab"
+				],
+				"aliases": [
+					"TSV"
+				]
+			},
+			{
+				"id": "excel",
+				"extensions": [
+					".xlsx",
+					".xlsm"
+				],
+				"aliases": [
+					"Excel"
+				]
+			}
+		],
+		"commands": [
+			{
+				"command": "csv.preview",
+				"category": "CSV",
+				"title": "Open Preview",
+				"icon": {
+					"light": "./img/Preview.svg",
+					"dark": "./img/Preview_inverse.svg"
+				}
+			},
+			{
+				"command": "excel.preview",
+				"category": "Excel",
+				"title": "Open Preview",
+				"icon": {
+					"light": "./img/Preview.svg",
+					"dark": "./img/Preview_inverse.svg"
+				}
+			},
+			{
+				"command": "csv.clearState",
+				"category": "CSV",
+				"title": "Clear Preview State"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "resourceLangId == excel",
+					"command": "excel.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == csv",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == tsv",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == CSV",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == TSV",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == 'CSV (semicolon)'",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == 'CSV (pipe)'",
+					"command": "csv.preview",
+					"group": "navigation"
+				}
+			],
+			"editor/title": [
+				{
+					"when": "resourceLangId == excel && resourceScheme != excel-preview",
+					"command": "excel.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == csv && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == tsv && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == CSV && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == TSV && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == 'CSV (semicolon)' && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == 'CSV (pipe)' && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				}
+			],
+			"editor/title/context": [
+				{
+					"when": "resourceLangId == excel && resourceScheme != excel-preview",
+					"command": "excel.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == csv && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == tsv && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == CSV && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == TSV && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == 'CSV (semicolon)' && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				},
+				{
+					"when": "resourceLangId == 'CSV (pipe)' && resourceScheme != csv-preview",
+					"command": "csv.preview",
+					"group": "navigation"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Excel Viewer configuration",
+			"properties": {
+				"csv-preview.separator": {
+					"type": "string",
+					"default": ",",
+					"description": "Specifies the separator used in a CSV file (normally , but also ; is common)."
+				},
+				"csv-preview.quoteMark": {
+					"type": "string",
+					"default": "\"",
+					"description": "Specifies the optional character used to surround individual values in a CSV file."
+				},
+				"csv-preview.hasHeaders": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specifies whether the first row in a CSV file represents column headers."
+				},
+				"csv-preview.capitalizeHeaders": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specifies whether column headers in CSV files are capitalized."
+				},
+				"csv-preview.resizeColumns": {
+					"type": "string",
+					"enum": [
+						"all",
+						"first",
+						"none"
+					],
+					"default": "none",
+					"description": "Specifies whether columns are automatically resized to fit the data for CSV files."
+				},
+				"csv-preview.lineNumbers": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specifies whether to display line numbers for CSV files."
+				},
+				"csv-preview.commentCharacter": {
+					"type": "string",
+					"default": "#",
+					"description": "Specifies the character used to mark comment lines in CSV files."
+				},
+				"csv-preview.skipComments": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specifies whether lines that begin with the comment character should be omitted from the CSV preview."
+				},
+				"csv-preview.formatValues": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specifies whether to format numeric values in CSV files, or to treat all values as strings."
+				},
+				"csv-preview.numberFormat": {
+					"type": "string",
+					"default": "g2",
+					"description": "Specifies a .NET-style format string used to format numeric columns in CSV files."
+				},
+				"csv-preview.theme": {
+					"type": "string",
+					"enum": [
+						"cerulean",
+						"cleandark",
+						"cleanlight",
+						"cocoa",
+						"coral",
+						"cyborg",
+						"dark",
+						"darkly",
+						"flatly",
+						"grayscale",
+						"highcontrast",
+						"light",
+						"material",
+						"midnight",
+						"minimal",
+						"modern",
+						"office",
+						"organic",
+						"simplex",
+						"slate",
+						"superhero",
+						"trust",
+						"zen"
+					],
+					"default": "cleandark",
+					"description": "Specifies the Wijmo theme used to style the preview grid."
+				},
+				"csv-preview.openStdin": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specifies whether text piped to stdin is automatically opened as a CSV preview."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "rsync -av src/content/ out/src/content/ ; tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.48",
+		"@types/node": "^7.0.63",
+		"mocha": "^2.3.3",
+		"typescript": "^2.8.3",
+		"vscode": "^1.1.17"
+	},
+	"dependencies": {
+		"body-parser": "^1.18.2",
+		"copy-paste": "^1.3.0",
+		"cors": "^2.8.4",
+		"escape-string-regexp": ">= 1.0.5",
+		"express": "^4.16.3",
+		"http-proxy-middleware": "^0.18.0",
+		"js-base64": "^2.4.3",
+		"request": "^2.85.0"
+	},
+	"__metadata": {
+		"id": "8bb12ae3-73f8-40cf-86b7-4bd5729c6238",
+		"publisherId": "aa6deade-27ef-4481-9de7-720b9c9e0b86",
+		"publisherDisplayName": "GrapeCity"
+	}
+}
