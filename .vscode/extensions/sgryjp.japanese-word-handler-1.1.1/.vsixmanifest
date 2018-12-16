@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Language="en-US" Id="japanese-word-handler" Version="1.1.1" Publisher="sgryjp"/>
+    <DisplayName>Japanese Word Handler</DisplayName>
+    <Description xml:space="preserve">Better Japanese word handling on cursor movement</Description>
+    <Tags>keybindings</Tags>
+    <Categories>Other</Categories>
+    <GalleryFlags>Public</GalleryFlags>
+    <Badges><Badge Link="https://marketplace.visualstudio.com/items?itemName=sgryjp.japanese-word-handler" ImgUri="https://vsmarketplacebadge.apphb.com/rating-short/sgryjp.japanese-word-handler.svg" Description="Rating (VS Marketplace)" /><Badge Link="https://marketplace.visualstudio.com/items?itemName=sgryjp.japanese-word-handler" ImgUri="https://vsmarketplacebadge.apphb.com/installs-short/sgryjp.japanese-word-handler.svg" Description="Number of installations (VS Marketplace)" /><Badge Link="https://ci.appveyor.com/project/sgryjp/japanese-word-handler/branch/master" ImgUri="https://ci.appveyor.com/api/projects/status/eqclfgbaefm5npt8/branch/master?svg=true" Description="Build status" /><Badge Link="https://github.com/sgryjp/japanese-word-handler/blob/master/LICENSE" ImgUri="https://img.shields.io/badge/license-zlib-lightgrey.svg?longCache=true&amp;style=popout" Description="zlib License" /></Badges>
+    <Properties>
+      <Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.22.0" />
+      <Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+      <Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
+      <Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+      
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/sgryjp/japanese-word-handler.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/sgryjp/japanese-word-handler.git" />
+        
+          <Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/sgryjp/japanese-word-handler.git" />
+        
+      
+      
+      
+      
+      
+      <Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+      
+      
+    </Properties>
+    <License>extension/LICENSE.txt</License>
+    
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
+  </Assets>
+</PackageManifest>
