@@ -9,6 +9,7 @@ call plug#begin()
 	Plug 'ternjs/tern_for_vim'
 	Plug 'othree/yajs.vim'
 	Plug 'sophacles/vim-processing'
+	Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 set title "編集中ファイル名の表示
@@ -18,6 +19,7 @@ set visualbell "ビープ音を視覚表示
 set laststatus=2 "ステータスを表示
 syntax on
 au BufNewFile,BufRead *.ejs set filetype=html "ejsの時にsyantax=htmlにする
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl "for GLSL
 let g:deoplete#enable_at_startup = 1
 set nu
 set hidden
