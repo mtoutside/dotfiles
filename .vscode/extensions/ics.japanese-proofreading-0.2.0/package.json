@@ -1,0 +1,207 @@
+{
+	"name": "japanese-proofreading",
+	"displayName": "テキスト校正くん",
+	"description": "VS CodeでテキストファイルやMarkdownファイルの日本語の文章をチェックする拡張機能",
+	"version": "0.2.0",
+	"publisher": "ICS",
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#424242",
+		"theme": "dark"
+	},
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"homepage": "https://github.com/ics-creative/project-japanese-proofreading/blob/master/README.md",
+	"bugs": {
+		"url": "https://github.com/ics-creative/project-japanese-proofreading/issues",
+		"email": "maya.watanabe@ics-web.jp"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ics-creative/project-japanese-proofreading.git"
+	},
+	"categories": [
+		"Linters",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown",
+		"onLanguage:plaintext"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "テキスト校正くん",
+			"properties": {
+				"japanese-proofreading.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "校正チェックを行う、1ドキュメント辺りの最大指摘数です。"
+				},
+				"japanese-proofreading.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "VS Codeと言語サーバー間通信のトレース設定です。"
+				},
+				"japanese-proofreading.textlint.誤字": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（間違いやすい慣用表現をチェックします）"
+				},
+				"japanese-proofreading.textlint.重言": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（同じ意味の言葉を重ねていないかチェックします）"
+				},
+				"japanese-proofreading.textlint.ひらく漢字": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（漢字の閉じ開きをチェックします）"
+				},
+				"japanese-proofreading.textlint.冗長な表現": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（冗長な日本語表現がないかチェックします）"
+				},
+				"japanese-proofreading.textlint.外来語カタカナ表記": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（外来語カタカナ表記の語尾の長音表記をチェックします）"
+				},
+				"japanese-proofreading.textlint.固有名詞": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（社名やブランド名などの固有名詞の表記をチェックします）"
+				},
+				"japanese-proofreading.textlint.技術用語": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（ウェブ技術に関する固有名詞の表記をチェックします）"
+				},
+				"japanese-proofreading.textlint.読点の数": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（一つの文で\"、\"を4つ以上使用していないかチェックします）"
+				},
+				"japanese-proofreading.textlint.助詞の連続": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（同じ助詞を連続して使用していないかチェックします）"
+				},
+				"japanese-proofreading.textlint.句点(。)と読点(、)": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（和文の句読点にピリオドやカンマを使用していないかチェックします）"
+				},
+				"japanese-proofreading.textlint.算用数字": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（算用数字が半角で表記されているかチェックします）"
+				},
+				"japanese-proofreading.textlint.アルファベット": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（アルファベットが半角で表記されているかチェックします）"
+				},
+				"japanese-proofreading.textlint.算用数字と漢数字の使い分け": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（算用数字と漢数字の使い分けをチェックします）"
+				},
+				"japanese-proofreading.textlint.一部の助数詞の表記": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（助数詞にともなう「ヵ」「か」「カ」「ヶ」「ケ」「箇」「個」の表記で「か」を使用しているかチェックします。）"
+				},
+				"japanese-proofreading.textlint.全角文字と半角文字の間": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（全角文字と半角文字の間にスペースを入れていないかチェックします）"
+				},
+				"japanese-proofreading.textlint.全角文字どうし": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（全角文字どうしの間にスペースを入れていないかをチェックします）"
+				},
+				"japanese-proofreading.textlint.かっこ類と隣接する文字の間のスペースの有無": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（かっこの外側、内側ともにスペースを入れていないかをチェックします）"
+				},
+				"japanese-proofreading.textlint.疑問符(？)": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（疑問符の後に別の文が続く場合、全角スペースが入っているかチェックします）"
+				},
+				"japanese-proofreading.textlint.ハイフン(-)": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（和文にハイフンを使用していないかチェックします）"
+				},
+				"japanese-proofreading.textlint.ダッシュ(-)": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（和文にダッシュを使用していないかチェックします）"
+				},
+				"japanese-proofreading.textlint.丸かっこ（）": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（半角の括弧を使用していないかチェックします）"
+				},
+				"japanese-proofreading.textlint.ら抜き言葉": {
+					"type": "boolean",
+					"default": true,
+					"description": "有効（ら抜き言葉をチェックします）"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "tslint -c tslint.json 'src/**/*.ts'",
+		"format": "tslint -c tslint.json 'src/**/*.ts' --fix",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test",
+		"update-dictionary": "npm uninstall textlint-rule-preset-icsmedia && npm i ics-creative/textlint-rule-preset-icsmedia",
+		"vsce:package": "vsce package"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.3",
+		"@types/node": "^10.9.4",
+		"prettier": "^1.14.2",
+		"tslint": "^5.11.0",
+		"tslint-plugin-prettier": "^1.3.0",
+		"typescript": "^2.9.2",
+		"vscode": "^1.1.18"
+	},
+	"dependencies": {
+		"debug": "^3.1.0",
+		"textlint": "^11.0.0",
+		"textlint-rule-max-ten": "^2.0.3",
+		"textlint-rule-no-mix-dearu-desumasu": "^3.0.3",
+		"textlint-rule-preset-icsmedia": "github:ics-creative/textlint-rule-preset-icsmedia",
+		"textlint-rule-preset-japanese": "^4.0.0",
+		"textlint-rule-preset-jtf-style": "^2.3.1",
+		"textlint-rule-prh": "^5.2.0",
+		"vscode-languageclient": "^4.2.1",
+		"vscode-languageserver": "^4.2.1",
+		"vscode-uri": "^1.0.5"
+	},
+	"__metadata": {
+		"id": "56e5d913-9811-4dfb-b75e-aa35bee99203",
+		"publisherId": "22a8f34a-39cf-4d86-918f-d61baffcb9a9",
+		"publisherDisplayName": "ICS"
+	}
+}
