@@ -10,6 +10,8 @@ call plug#begin()
 	Plug 'othree/yajs.vim'
 	Plug 'sophacles/vim-processing'
 	Plug 'tikhomirov/vim-glsl'
+	Plug 'scrooloose/nerdtree' "ツリー表示
+	Plug 'tomtom/tcomment_vim' "コメント Cmd + - -
 call plug#end()
 
 set title "編集中ファイル名の表示
