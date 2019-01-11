@@ -8,6 +8,7 @@ call plug#begin()
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'ternjs/tern_for_vim'
 	Plug 'othree/yajs.vim'
+	Plug 'othree/html5.vim'
 	Plug 'sophacles/vim-processing'
 	Plug 'tikhomirov/vim-glsl'
 	Plug 'scrooloose/nerdtree' "ツリー表示
