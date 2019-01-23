@@ -12,7 +12,7 @@ call plug#begin()
 	Plug 'sophacles/vim-processing'
 	Plug 'tikhomirov/vim-glsl'
 	Plug 'scrooloose/nerdtree' "ツリー表示
-	Plug 'tomtom/tcomment_vim' "コメント Cmd + - -
+	Plug 'tomtom/tcomment_vim' "コメント Cmd + _ _
 	Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
