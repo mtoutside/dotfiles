@@ -13,6 +13,7 @@ call plug#begin()
 	Plug 'tikhomirov/vim-glsl'
 	Plug 'scrooloose/nerdtree' "ツリー表示
 	Plug 'tomtom/tcomment_vim' "コメント Cmd + - -
+	Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
 set title "編集中ファイル名の表示
