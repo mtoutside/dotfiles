@@ -14,6 +14,7 @@ call plug#begin()
 	Plug 'scrooloose/nerdtree' "ツリー表示
 	Plug 'tomtom/tcomment_vim' "コメントにする <C- _+ _>
 	Plug 'heavenshell/vim-jsdoc'
+	Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set title "編集中ファイル名の表示
