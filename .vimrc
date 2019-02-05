@@ -15,6 +15,7 @@ call plug#begin()
 	Plug 'tomtom/tcomment_vim' "コメントにする <C- _+ _>
 	Plug 'heavenshell/vim-jsdoc'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set title "編集中ファイル名の表示
@@ -116,7 +117,40 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-let g:lightline = { 'colorscheme': 'tender' }
+" lightline.vim
+let g:lightline = { 
+	\ 'colorscheme': 'tender',
+	\ 'component_function': {
+	\ 'gitgutter': 'MyGitGutter',
+	\ 'gitbranch': 'fugitive#head'
+	\ },
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ }
+
+function! MyGitGutter()
+  if ! exists('*GitGutterGetHunkSummary')
+        \ || ! get(g:, 'gitgutter_enabled', 0)
+        \ || winwidth('.') <= 90
+    return ''
+  endif
+  let symbols = [
+        \ g:gitgutter_sign_added . ' ',
+        \ g:gitgutter_sign_modified . ' ',
+        \ g:gitgutter_sign_removed . ' '
+        \ ]
+  let hunks = GitGutterGetHunkSummary()
+  let ret = []
+  for i in [0, 1, 2]
+    if hunks[i] > 0
+      call add(ret, symbols[i] . hunks[i])
+    endif
+  endfor
+  return join(ret, ' ')
+endfunction
+
 
 "########### backup作らせない
 set noswapfile
