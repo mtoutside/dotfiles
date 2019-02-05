@@ -96,10 +96,6 @@ nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 "ノーマルモードでenterで改行追加
 nnoremap <CR> i<Return><Esc>^k
 
-"space+cで新規タブ,<C-n>で次、<C-p>で前のタブ
-nnoremap <Space>c  :tabnew<CR> 
-nnoremap <C-n> gt
-nnoremap <C-p> gT
 "でレジスタ上書きしない
 nnoremap X "_X
 vnoremap X "_X
