@@ -16,6 +16,7 @@ call plug#begin()
 	Plug 'heavenshell/vim-jsdoc'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
+	Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set title "編集中ファイル名の表示

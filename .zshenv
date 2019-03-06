@@ -2,6 +2,7 @@
 
 path=(
     /usr/local/bin
+		$HOME/.cargo/bin(N-/)
 		/Users/toyama/miniconda3/bin(N-/)
     $path
 )
