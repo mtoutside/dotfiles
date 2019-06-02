@@ -96,8 +96,6 @@ alias build='() { php -S  localhost:"${1:-8000}" }'
 alias la='gls -a --color'
 alias ll='gls -l --color'
 alias ls='gls  --color'
-# rmするとゴミ箱に入るよう変更
-alias rmt='rmtrash'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
