@@ -17,6 +17,7 @@ call plug#begin()
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'rust-lang/rust.vim'
+	Plug 'posva/vim-vue'
 call plug#end()
 
 set title "編集中ファイル名の表示
