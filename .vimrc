@@ -18,6 +18,7 @@ call plug#begin()
 	Plug 'tpope/vim-fugitive'
 	Plug 'rust-lang/rust.vim'
 	Plug 'posva/vim-vue'
+	Plug 'tmhedberg/matchit' " %機能の拡張
 call plug#end()
 
 set title "編集中ファイル名の表示
