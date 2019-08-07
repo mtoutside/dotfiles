@@ -20,6 +20,7 @@ call plug#begin()
 	Plug 'posva/vim-vue'
 	Plug 'tmhedberg/matchit' " %機能の拡張
 	Plug 'sheerun/vim-polyglot' " 構文解析
+	Plug 'tpope/vim-surround' " サラウンド cs[変えるもの][変えたいもの], dsで削除, ysでも
 call plug#end()
 
 set title "編集中ファイル名の表示
