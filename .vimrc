@@ -19,6 +19,7 @@ call plug#begin()
 	Plug 'rust-lang/rust.vim'
 	Plug 'posva/vim-vue'
 	Plug 'tmhedberg/matchit' " %機能の拡張
+	Plug 'sheerun/vim-polyglot' " 構文解析
 call plug#end()
 
 set title "編集中ファイル名の表示
