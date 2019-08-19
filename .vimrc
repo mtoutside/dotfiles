@@ -36,7 +36,7 @@ set nu
 set hidden
 
 "===== 文字、カーソル設定 =====
-set fileencodings=iso-2022-jp,cp932,euc-jp,sjis,utf-8 "ファイルを読み込む時の、文字コード自動判別の順番
+set fileencodings=iso-2022-jp,utf-8,cp932,euc-jp,sjis "ファイルを読み込む時の、文字コード自動判別の順番
 set fenc=utf-8 "文字コードを指定
 set virtualedit=onemore "カーソルを行末の一つ先まで移動可能にする
 set autoindent "自動インデント
