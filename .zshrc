@@ -128,3 +128,6 @@ function gdiffa()
   fi
   git archive --format=zip --prefix=root/ $h `eval $diff` -o archive.zip
 }
+
+# nodenv切り替え用
+eval "$(nodenv init -)"
