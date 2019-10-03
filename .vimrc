@@ -43,7 +43,7 @@ set autoindent "自動インデント
 set smartindent "オートインデント
 let g:indent_guides_enable_on_vim_startup = 1 "インデント可視化
 set tabstop=2 "インデントをスペース2つ分に設定
-set shiftwidth=1 "自動的に入力されたインデントの空白を1つ分に設定
+set shiftwidth=2 "自動的に入力されたインデントの空白を1つ分に設定
 "set listchars=tab:▸\ ,eol:↲,extends:❯,precedes:❮ "不可視文字の指定
 set listchars=tab:▸\ ,eol:$,extends:❯,precedes:❮ "不可視文字の指定
 set whichwrap=b,s,h,l,<,>,[,],~ "行頭、行末で行のカーソル移動を可能にする
