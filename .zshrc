@@ -132,3 +132,4 @@ function gdiffa()
 # nodenv切り替え用
 eval "$(anyenv init -)"
 eval "$(nodenv init -)"
+export PATH="/usr/local/sbin:$PATH"
