@@ -133,3 +133,5 @@ function gdiffa()
 eval "$(anyenv init -)"
 eval "$(nodenv init -)"
 export PATH="/usr/local/sbin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
