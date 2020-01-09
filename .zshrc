@@ -108,6 +108,10 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
+# 権限変更でやらかさない
+alias chmod='chmod --preserve-root'
+alias chown='chown --preserve-root'
+
 # git diff zip
 function gdiffa()
 {
