@@ -6,7 +6,6 @@ call plug#begin()
 	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'nathanaelkane/vim-indent-guides'
-	Plug 'ternjs/tern_for_vim'
 	Plug 'othree/yajs.vim'
 	Plug 'othree/html5.vim'
 	Plug 'sophacles/vim-processing'
@@ -23,6 +22,7 @@ call plug#begin()
 	Plug 'tpope/vim-surround' " サラウンド cs[変えるもの][変えたいもの], dsで削除, ysでも
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set title "編集中ファイル名の表示
