@@ -6,7 +6,6 @@ call plug#begin()
 	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'nathanaelkane/vim-indent-guides'
-	Plug 'ternjs/tern_for_vim'
 	Plug 'othree/yajs.vim'
 	Plug 'othree/html5.vim'
 	Plug 'sophacles/vim-processing'
