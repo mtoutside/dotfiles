@@ -160,7 +160,23 @@ function! MyGitGutter()
   return join(ret, ' ')
 endfunction
 
+" NERDTree
+" 表示幅
+let g:NERDTreeWinSize=20
 
+" 隠しファイルを表示
+let g:NERDTreeShowHidden=1
+
+" 非表示ファイル
+let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
+
+augroup vimrc_nerdtree
+  autocmd!
+  " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+  autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+
+" CTRL + n で表示きりかえ
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 "########### backup作らせない
 set noswapfile
 set nobackup
