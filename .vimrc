@@ -84,6 +84,7 @@ set mouse=a
 set ttymouse=xterm2
 
 "===== キー入力 =====
+let mapleader = "\<Space>"
 "入力モード時のカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -176,7 +177,7 @@ augroup vimrc_nerdtree
   autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
 " CTRL + n で表示きりかえ
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <space>n :NERDTreeToggle<CR>
 "########### backup作らせない
 set noswapfile
 set nobackup
