@@ -23,10 +23,6 @@ call plug#begin()
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/1.x',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
 
 set title "編集中ファイル名の表示
@@ -37,7 +33,6 @@ set laststatus=2 "ステータスを表示
 syntax on
 au BufNewFile,BufRead *.ejs set filetype=html "ejsの時にsyantax=htmlにする
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl "for GLSL
-let g:deoplete#enable_at_startup = 1
 set nu
 set hidden
 
@@ -183,9 +178,10 @@ augroup vimrc_nerdtree
 " CTRL + n で表示きりかえ
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
-" Prettier 実行は <Leader>p
-" 非同期実行
-let g:prettier#exec_cmd_async = 1
+" coc-prettier 
+" :CocInstall coc-prettier を実行
+" <Leader>p でprettier実行
+nnoremap <silent> <Leader>p :CocCommand prettier.formatFile<CR>
 
 "########### backup作らせない
 set noswapfile
