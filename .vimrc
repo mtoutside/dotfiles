@@ -23,6 +23,10 @@ call plug#begin()
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
 
 set title "編集中ファイル名の表示
@@ -177,6 +181,11 @@ augroup vimrc_nerdtree
 
 " CTRL + n で表示きりかえ
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+
+" Prettier 実行は <Leader>p
+" 非同期実行
+let g:prettier#exec_cmd_async = 1
+
 "########### backup作らせない
 set noswapfile
 set nobackup
