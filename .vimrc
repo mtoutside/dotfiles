@@ -175,8 +175,8 @@ augroup vimrc_nerdtree
   " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
   autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
-" CTRL + n で表示きりかえ
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+" <Leader> + n で表示きりかえ
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 
 " coc-prettier 
 " :CocInstall coc-prettier を実行
