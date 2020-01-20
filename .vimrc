@@ -88,6 +88,7 @@ set mouse=a
 set ttymouse=xterm2
 
 "===== キー入力 =====
+let mapleader = "\<Space>"
 "入力モード時のカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
