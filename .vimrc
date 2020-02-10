@@ -118,11 +118,19 @@ vnoremap S "_S
 "履歴を10000件保存
 set history=10000
 
+"########### backup作らせない
+set noswapfile
+set nobackup
+set noundofile
+
 " 全角スペースの背景を白に変更
 autocmd Colorscheme * highlight FullWidthSpace ctermbg=white
 autocmd VimEnter * match FullWidthSpace /　/
-"カラースキーマの適用
-"colorscheme molokai
+
+" カラースキーマ
+" scssのクラス名の色変更
+autocmd Colorscheme * highlight scssSelectorName ctermfg=142 guifg=#9faa00
+" テーマ適用
 colorscheme tender
 " set lighline theme inside lightline config
 if !has('gui_running')
@@ -186,9 +194,41 @@ nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 " <Leader>p でprettier実行
 nnoremap <silent> <Leader>p :CocCommand prettier.formatFile<CR>
 
-"########### backup作らせない
-set noswapfile
-set nobackup
-set noundofile
-
-
+" :SyntaxInfo でカーソル下のシンタックス名表示
+function! s:get_syn_id(transparent)
+  let synid = synID(line("."), col("."), 1)
+  if a:transparent
+    return synIDtrans(synid)
+  else
+    return synid
+  endif
+endfunction
+function! s:get_syn_attr(synid)
+  let name = synIDattr(a:synid, "name")
+  let ctermfg = synIDattr(a:synid, "fg", "cterm")
+  let ctermbg = synIDattr(a:synid, "bg", "cterm")
+  let guifg = synIDattr(a:synid, "fg", "gui")
+  let guibg = synIDattr(a:synid, "bg", "gui")
+  return {
+        \ "name": name,
+        \ "ctermfg": ctermfg,
+        \ "ctermbg": ctermbg,
+        \ "guifg": guifg,
+        \ "guibg": guibg}
+endfunction
+function! s:get_syn_info()
+  let baseSyn = s:get_syn_attr(s:get_syn_id(0))
+  echo "name: " . baseSyn.name .
+        \ " ctermfg: " . baseSyn.ctermfg .
+        \ " ctermbg: " . baseSyn.ctermbg .
+        \ " guifg: " . baseSyn.guifg .
+        \ " guibg: " . baseSyn.guibg
+  let linkedSyn = s:get_syn_attr(s:get_syn_id(1))
+  echo "link to"
+  echo "name: " . linkedSyn.name .
+        \ " ctermfg: " . linkedSyn.ctermfg .
+        \ " ctermbg: " . linkedSyn.ctermbg .
+        \ " guifg: " . linkedSyn.guifg .
+        \ " guibg: " . linkedSyn.guibg
+endfunction
+command! SyntaxInfo call s:get_syn_info()
