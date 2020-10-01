@@ -23,6 +23,7 @@ call plug#begin()
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'mustache/vim-mustache-handlebars' " handlebarsシンタックス
 call plug#end()
 
 set title "編集中ファイル名の表示
