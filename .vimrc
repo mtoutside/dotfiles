@@ -12,7 +12,7 @@ call plug#begin()
 	Plug 'tikhomirov/vim-glsl'
 	Plug 'scrooloose/nerdtree' "ツリー表示
 	Plug 'tomtom/tcomment_vim' "コメントにする <C- _+ _>
-	Plug 'heavenshell/vim-jsdoc' ":JsDoc で挿入
+	Plug 'heavenshell/vim-jsdoc', {'for': ['javascript', 'javascript.jsx','typescript'], 'do': 'make install'} ":JsDoc で挿入
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
 	Plug 'rust-lang/rust.vim'
