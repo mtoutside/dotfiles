@@ -85,6 +85,7 @@ set mouse=a
 set ttymouse=xterm2
 
 "===== キー入力 =====
+"<Leader>にスペースを設定
 let mapleader = "\<Space>"
 "入力モード時のカーソル移動
 inoremap <C-j> <Down>
@@ -101,13 +102,31 @@ inoremap <C-e> <C-o>$
 inoremap <silent> jj <Esc>
 inoremap <silent> っj <ESC>
 
-"ノーマルモードでshift+oで空行追加
-"nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 "ノーマルモードでspace+enterで空行追加
 nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 
 " <Leader>b でfzfの :Buffers実行
 nnoremap <silent> <Leader>b :Buffers<CR>
+
+" <Leader> + n でNERDTreeの表示きりかえ
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+"スペース2回でCocList
+nnoremap <silent> <Leader><Leader> :<C-u>CocList<CR>
+"スペースhでhover
+nnoremap <silent> <Leader>h :<C-u>call CocAction('doHover')<CR>
+"スペースdfでDefinition
+nnoremap <silent> <Leader>df <Plug>(coc-definition)
+"スペースrfでReferences
+nnoremap <silent> <Leader>rf <Plug>(coc-references)
+"スペースrnでRename
+nnoremap <silent> <Leader>rn <Plug>(coc-rename)
+"スペースfmtでFormat
+nnoremap <silent> <Leader>fmt <Plug>(coc-format)
+
+" coc-prettier 
+" :CocInstall coc-prettier を実行
+" <Leader>p でprettier実行
+nnoremap <silent> <Leader>p :CocCommand prettier.formatFile<CR>
 
 "でレジスタ上書きしない
 nnoremap X "_X
@@ -190,13 +209,6 @@ augroup vimrc_nerdtree
   " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
   autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
-" <Leader> + n で表示きりかえ
-nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
-
-" coc-prettier 
-" :CocInstall coc-prettier を実行
-" <Leader>p でprettier実行
-nnoremap <silent> <Leader>p :CocCommand prettier.formatFile<CR>
 
 " :SyntaxInfo でカーソル下のシンタックス名表示
 function! s:get_syn_id(transparent)
