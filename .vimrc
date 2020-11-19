@@ -144,11 +144,13 @@ let g:lightline = {
 	\ 'colorscheme': 'tender',
 	\ 'component_function': {
 	\ 'gitgutter': 'MyGitGutter',
-	\ 'gitbranch': 'fugitive#head'
+	\ 'gitbranch': 'fugitive#head',
+  \ 'coc': 'coc#status'
 	\ },
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+	\   'right': [ ['coc'] ]
 	\ },
 	\ }
 
