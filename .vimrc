@@ -105,6 +105,9 @@ inoremap <silent> っj <ESC>
 "ノーマルモードでspace+enterで空行追加
 nnoremap <Space><CR> :<C-u>call append(expand('.'), '')<Cr>j
 
+" <Leader>w で保存
+nnoremap <silent> <Leader>w :w<CR>
+
 " <Leader>b でfzfの :Buffers実行
 nnoremap <silent> <Leader>b :Buffers<CR>
 
