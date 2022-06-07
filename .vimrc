@@ -185,7 +185,7 @@ let g:lightline = {
 	\ 'colorscheme': 'tender',
 	\ 'component_function': {
 	\ 'gitgutter': 'MyGitGutter',
-	\ 'gitbranch': 'fugitive#head',
+	\ 'gitbranch': 'fugitiveHead',
   \ 'coc': 'coc#status'
 	\ },
 	\ 'active': {
