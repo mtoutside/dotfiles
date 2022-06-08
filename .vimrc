@@ -24,6 +24,7 @@ call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
 	Plug 'mustache/vim-mustache-handlebars' " handlebarsシンタックス
+	Plug 'tomlion/vim-solidity'
 call plug#end()
 
 set title "編集中ファイル名の表示
