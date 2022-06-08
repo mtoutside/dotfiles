@@ -6,16 +6,18 @@ call plug#begin()
 	Plug 'lambdalisue/vim-unified-diff' "vimdiffをhistogramアルゴリズムに変更
 	Plug 'editorconfig/editorconfig-vim'
 	Plug 'nathanaelkane/vim-indent-guides'
+	Plug 'mustache/vim-mustache-handlebars' " handlebarsシンタックス
+	Plug 'tomlion/vim-solidity'
 	Plug 'othree/yajs.vim'
 	Plug 'othree/html5.vim'
 	Plug 'sophacles/vim-processing'
 	Plug 'tikhomirov/vim-glsl'
+	Plug 'rust-lang/rust.vim'
+	Plug 'posva/vim-vue'
 	Plug 'scrooloose/nerdtree' "ツリー表示
 	Plug 'tomtom/tcomment_vim' "コメントにする <C- _+ _>
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
-	Plug 'rust-lang/rust.vim'
-	Plug 'posva/vim-vue'
 	Plug 'tmhedberg/matchit' " %機能の拡張
 	Plug 'sheerun/vim-polyglot' " 構文解析
 	Plug 'tpope/vim-surround' " サラウンド cs[変えるもの][変えたいもの], dsで削除, ysでも
@@ -23,8 +25,6 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
-	Plug 'mustache/vim-mustache-handlebars' " handlebarsシンタックス
-	Plug 'tomlion/vim-solidity'
 call plug#end()
 
 set title "編集中ファイル名の表示
