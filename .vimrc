@@ -22,6 +22,11 @@ call plug#begin()
 	Plug 'sheerun/vim-polyglot' " 構文解析
 	Plug 'tpope/vim-surround' " サラウンド cs[変えるもの][変えたいもの], dsで削除, ysでも
   Plug '/usr/local/opt/fzf'
+	if isdirectory("/usr/local/opt/fzf")
+		Plug '/usr/local/opt/fzf'
+	else
+		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " M1 macの場合fzfの場所が異なるので新たにインストール
+	endif
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
