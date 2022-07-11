@@ -2,6 +2,10 @@
 
 My dotfiles here
 
+## Related Tools
+https://github.com/junegunn/vim-plug
+https://gist.github.com/mtoutside/04d6a4219951f58a98c34bd6963ab928
+
 # make a symbolic link
 
 `sh ~/dotfiles/deploy.sh`
