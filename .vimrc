@@ -131,12 +131,16 @@ nnoremap <silent> <Leader>rn <Plug>(coc-rename)
 "スペースfmtでFormat
 nnoremap <silent> <Leader>fmt <Plug>(coc-format)
 
+" ====================
 " coc-prettier 
+" ====================
 " :CocInstall coc-prettier を実行
 " <Leader>p でprettier実行
 nnoremap <silent> <Leader>p :CocCommand prettier.formatFile<CR>
 
+" ====================
 " coc-snippets 
+" ====================
 " :CocInstall coc-snippets を実行
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -155,6 +159,19 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
+
+inoremap <silent><expr> <TAB>
+	\ coc#pum#visible() ? coc#_select_confirm() :
+	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+	\ CheckBackSpace() ? "\<TAB>" :
+	\ coc#refresh()
+
+function! CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 "でレジスタ上書きしない
 nnoremap X "_X
@@ -181,12 +198,15 @@ autocmd VimEnter * match FullWidthSpace /　/
 autocmd Colorscheme * highlight scssSelectorName ctermfg=142 guifg=#9faa00
 " テーマ適用
 colorscheme tender
+
+" ====================
+" lightline.vim
+" ====================
 " set lighline theme inside lightline config
 if !has('gui_running')
   set t_Co=256
 endif
 
-" lightline.vim
 let g:lightline = { 
 	\ 'colorscheme': 'tender',
 	\ 'component_function': {
@@ -222,7 +242,9 @@ function! MyGitGutter()
   return join(ret, ' ')
 endfunction
 
+" ====================
 " NERDTree
+" ====================
 " 表示幅
 let g:NERDTreeWinSize=20
 
