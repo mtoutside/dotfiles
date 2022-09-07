@@ -14,6 +14,8 @@ call plug#begin()
 	Plug 'tikhomirov/vim-glsl'
 	Plug 'rust-lang/rust.vim'
 	Plug 'posva/vim-vue'
+	Plug 'SirVer/ultisnips'
+	Plug 'mlaursen/vim-react-snippets'
 	Plug 'scrooloose/nerdtree' "ツリー表示
 	Plug 'tomtom/tcomment_vim' "コメントにする <C- _+ _>
 	Plug 'airblade/vim-gitgutter'
