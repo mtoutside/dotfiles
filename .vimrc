@@ -173,6 +173,13 @@ inoremap <silent><expr> <TAB>
 	\ CheckBackSpace() ? "\<TAB>" :
 	\ coc#refresh()
 
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
+set completeopt=menuone,noinsert
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+
 "でレジスタ上書きしない
 nnoremap X "_X
 vnoremap X "_X
