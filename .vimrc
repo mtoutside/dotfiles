@@ -24,6 +24,7 @@ call plug#begin()
 	Plug 'sheerun/vim-polyglot' " 構文解析
 	Plug 'tpope/vim-surround' " サラウンド cs[変えるもの][変えたいもの], dsで削除, ysでも
   Plug '/usr/local/opt/fzf'
+	Plug 'wakatime/vim-wakatime'
 	if isdirectory("/usr/local/opt/fzf")
 		Plug '/usr/local/opt/fzf'
 	else
