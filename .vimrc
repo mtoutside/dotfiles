@@ -174,8 +174,9 @@ inoremap <silent><expr> <TAB>
 	\ CheckBackSpace() ? "\<TAB>" :
 	\ coc#refresh()
 
-" 補完表示時のEnterで改行をしない
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+" 補完表示時のEnterで確定
+" inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 set completeopt=menuone,noinsert
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
