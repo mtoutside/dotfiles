@@ -168,11 +168,13 @@ function! CheckBackSpace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" <Tab>で次、<S+Tab>で前
 inoremap <silent><expr> <TAB>
-	\ coc#pum#visible() ? coc#_select_confirm() :
-	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-	\ CheckBackSpace() ? "\<TAB>" :
-	\ coc#refresh()
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ <SID>CheckBackSpace() ? "\<Tab>" :
+  \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<S-TAB>" " "\<C-h>"
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " 補完表示時のEnterで確定
 " inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
