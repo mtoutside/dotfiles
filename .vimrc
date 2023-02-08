@@ -137,7 +137,8 @@ nnoremap <silent> <Leader>rf <Plug>(coc-references)
 nnoremap <silent> <Leader>rn <Plug>(coc-rename)
 "スペースfmtでFormat
 nnoremap <silent> <Leader>fmt <Plug>(coc-format)
-
+"<C-j>でJsDoc展開
+nnoremap <silent> <C-j> <Plug>(jsdoc)
 " ====================
 " coc-prettier 
 " ====================
