@@ -1,3 +1,6 @@
+[core]
+	excludesfile = ~/.gitignore
+
 [alias]
 	s = status
 	a = !git add . && git status
