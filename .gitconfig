@@ -7,6 +7,7 @@
 	au = !git add -u . && git status
 	aa = !git add . && git add -u . && git status
 	c = commit
+	co = checkout
 	cm = commit -m
 	ca = commit --amend # careful
 	ac = !git add . && git commit
