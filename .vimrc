@@ -14,6 +14,7 @@ call plug#begin()
 	Plug 'tikhomirov/vim-glsl'
 	Plug 'rust-lang/rust.vim'
 	Plug 'posva/vim-vue'
+	Plug 'wuelnerdotexe/vim-astro'
 	Plug 'SirVer/ultisnips'
 	Plug 'mlaursen/vim-react-snippets'
 	Plug 'scrooloose/nerdtree' "ツリー表示
@@ -326,3 +327,6 @@ let g:user_emmet_settings = {
 \      'extends' : 'jsx',
 \  },
 \}
+
+" astro_typescript設定
+let g:astro_typescript = 'enable'
