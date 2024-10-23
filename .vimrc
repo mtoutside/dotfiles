@@ -38,6 +38,7 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'antoinemadec/coc-fzf'
+	Plug 'tidalcycles/vim-tidal'
 call plug#end()
 
 set title "編集中ファイル名の表示
