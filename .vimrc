@@ -97,7 +97,8 @@ set incsearch "インクリメンタルサーチを有効にする
 
 "===== マウス設定 =====
 set mouse=a
-set ttymouse=xterm2
+"set ttymouse=xterm2
+set ttymouse=sgr
 
 "===== キー入力 =====
 "<Leader>にスペースを設定
