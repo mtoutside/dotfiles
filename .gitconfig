@@ -20,6 +20,7 @@
 	dh = diff HEAD^
 	master = checkout master
 	main = checkout main
+	fpush = push --force-with-lease --force-if-includes
 	spull = svn rebase
 	spush = svn dcommit
 	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
