@@ -134,9 +134,8 @@ function gdiffa()
   git archive --format=zip --prefix=root/ $h `eval $diff` -o archive.zip
 }
 
-# nodenv切り替え用
-eval "$(anyenv init -)"
-eval "$(nodenv init -)"
 export PATH="/usr/local/sbin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
