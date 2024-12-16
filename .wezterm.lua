@@ -57,7 +57,7 @@ config.use_ime = true
 config.macos_forward_to_ime_modifier_mask = "SHIFT|CTRL"
 
 -- exit
-config.exit_behavior = "CloseOnCleanExit"
+config.exit_behavior = "Close"
 
 -- キーバインド
 config.send_composed_key_when_left_alt_is_pressed = true
