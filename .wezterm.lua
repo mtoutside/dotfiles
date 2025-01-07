@@ -136,6 +136,12 @@ config.keys = {
 		mods = "CMD|CTRL|SHIFT",
 		action = wezterm.action.AdjustPaneSize({ "Right", 2 }),
 	},
+	-- ⌘ Ctrl z でペインを最大化
+	{
+		key = "z",
+		mods = "CMD|CTRL",
+		action = wezterm.action.TogglePaneZoomState,
+	},
 	-- CMD Enter でフルスクリーン切り替え
 	{
 		key = "Enter",
