@@ -29,21 +29,8 @@ vim.api.nvim_set_keymap(
 -- <Leader>w で保存
 vim.api.nvim_set_keymap("n", "<Leader>w", ":w<CR>", { noremap = true, silent = true })
 
--- <Leader>b でfzfの :Buffers実行
-vim.api.nvim_set_keymap("n", "<Leader>b", ":Buffers<CR>", { noremap = true, silent = true })
-
 -- <C-j>でJsDoc展開
 vim.api.nvim_set_keymap("n", "<C-j>", "<Plug>(jsdoc)", { noremap = true, silent = true })
-
--- coc-prettier
--- :CocInstall coc-prettier を実行
--- <Leader>p でprettier実行
-vim.api.nvim_set_keymap("n", "<Leader>p", ":CocCommand prettier.formatFile<CR>", { noremap = true, silent = true })
-
--- coc-snippets
--- :CocInstall coc-snippets を実行
--- Use <C-l> for trigger snippet expand.
-vim.api.nvim_set_keymap("i", "<C-l>", "<Plug>(coc-snippets-expand)", { noremap = true, silent = true })
 
 -- Use <tab> for jump to next placeholder.
 vim.g.coc_snippet_next = "<tab>"
@@ -53,9 +40,6 @@ vim.g.coc_snippet_prev = "<C-k>"
 
 -- Use <C-j> for both expand and jump (make expand higher priority.)
 vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = true, silent = true })
-
--- Use <leader>x for convert visual selected code to snippet
-vim.api.nvim_set_keymap("x", "<leader>x", "<Plug>(coc-convert-snippet)", { noremap = true, silent = true })
 
 -- でレジスタ上書きしない
 vim.api.nvim_set_keymap("n", "X", '"_X', { noremap = true, silent = true })
