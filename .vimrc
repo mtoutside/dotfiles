@@ -52,6 +52,7 @@ au BufNewFile,BufRead *.ejs set filetype=html "ejsの時にsyantax=htmlにする
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl "for GLSL
 set nu
 set hidden
+set nrformats= "<C-a>,<C-x>で数値のカウントを常に10進数にする
 
 "===== 文字、カーソル設定 =====
 set encoding=utf-8
