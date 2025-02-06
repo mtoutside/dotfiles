@@ -135,7 +135,7 @@ function gdiffa()
 }
 
 export PATH="/usr/local/sbin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
