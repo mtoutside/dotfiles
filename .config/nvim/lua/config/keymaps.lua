@@ -33,13 +33,13 @@ vim.api.nvim_set_keymap("n", "<Leader>w", ":w<CR>", { noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<C-j>", "<Plug>(jsdoc)", { noremap = true, silent = true })
 
 -- Use <tab> for jump to next placeholder.
-vim.g.coc_snippet_next = "<tab>"
+-- vim.g.coc_snippet_next = "<tab>"
 
 -- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-vim.g.coc_snippet_prev = "<C-k>"
+-- vim.g.coc_snippet_prev = "<C-k>"
 
 -- Use <C-j> for both expand and jump (make expand higher priority.)
-vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = true, silent = true })
 
 -- でレジスタ上書きしない
 vim.api.nvim_set_keymap("n", "X", '"_X', { noremap = true, silent = true })
@@ -50,7 +50,7 @@ vim.api.nvim_set_keymap("n", "S", '"_S', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "S", '"_S', { noremap = true, silent = true }) -- Add any additional keymaps here
 
 -- telescope
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+-- local builtin = require("telescope.builtin")
+-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+-- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
