@@ -15,4 +15,11 @@ return {
       desc = "Explorer NeoTree (cwd)",
     },
   },
+  opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true,
+      },
+    },
+  },
 }
